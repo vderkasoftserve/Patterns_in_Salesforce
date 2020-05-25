@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Subscribes the current user to the channel.</description>
+    <fieldOverrides>
+        <field>Channel__c</field>
+        <formula>Channel__r.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>User__c</field>
+        <formula>$User.Id</formula>
+    </fieldOverrides>
+    <label>Subscribe</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Confirmation_Message__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>You\\\\\\\&#39;ve been subscribed!</successMessage>
+    <targetObject>Subscription__c</targetObject>
+    <targetParentField>Channel__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

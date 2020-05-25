@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmation_Message__c</fullName>
+    <defaultValue>&quot;Press &#39;Save&#39; if you do.&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Do you confirm the subscription?</label>
+    <length>25</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
