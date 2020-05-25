@@ -1,0 +1,22 @@
+<template>
+    <ul class="slds-feed__list">
+        <template for:each={items} for:item='item'>
+            <li class="slds-feed__item" key={item.Id}>
+                <article class="slds-post">
+                    <header class="slds-post__header slds-media">
+                        <div class="slds-media__body slds-m-top_x-small">
+                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                <p>
+                                    <a href="javascript:void(0);" title={item.channelName}>{item.channelName}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="slds-post__content slds-text-longform">
+                        <p>{item.message}</p>
+                    </div>
+                </article>
+            </li>
+        </template>
+    </ul>
+</template>

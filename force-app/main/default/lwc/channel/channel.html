@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-publisher slds-box slds-theme_default">
+        <label for="comment-text-input2" class="slds-publisher__toggle-visibility slds-m-bottom_small">
+            <span class="slds-assistive-text">Write your post</span>To: My followers</label>
+        <textarea id="comment-text-input2" class="slds-publisher__input slds-textarea slds-text-longform" placeholder="Write your post…" oninput={handleInput}>
+        </textarea>
+
+        <div class="slds-publisher__actions slds-grid slds-grid_align-spread">
+            <lightning-button icon-name="action:share_post" icon-position="right" variant="brand" class="slds-m-left_small" label="Post" onclick={handlePost}>
+            </lightning-button>
+        </div>
+    </div>
+
+    <c-feed-items items={feedItems}></c-feed-items>
+</template>

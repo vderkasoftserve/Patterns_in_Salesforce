@@ -5,6 +5,16 @@
         <visible>true</visible>
     </applicationVisibilities>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Channel_Post__c.Channel__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Channel_Post__c.Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Subscription__c.Confirmation_Message__c</field>
         <readable>true</readable>
@@ -16,6 +26,15 @@
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Admin</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Channel_Post__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -36,10 +55,6 @@
     </objectPermissions>
     <tabSettings>
         <tab>Channel__c</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Followed_Items</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>
