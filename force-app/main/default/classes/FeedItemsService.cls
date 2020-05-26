@@ -16,4 +16,13 @@ public with sharing class FeedItemsService {
                 ORDER BY CreatedDate DESC
         ];
     }
+
+    public Channel_Post__c getChannelPostsById(Id itemId) {
+        return [
+                SELECT Channel__r.Name, Message__c
+                FROM Channel_Post__c
+                WHERE Id = :itemId
+                LIMIT 1
+        ];
+    }
 }

@@ -1,12 +1,15 @@
 import { LightningElement, track, api, wire } from 'lwc';
+
 import { createRecord } from 'lightning/uiRecordApi';
+
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 import CHANNEL_POST_OBJECT from '@salesforce/schema/Channel_Post__c';
 import CHANNEL_POST_CHANNEL from '@salesforce/schema/Channel_Post__c.Channel__c';
 import CHANNEL_POST_MESSAGE from '@salesforce/schema/Channel_Post__c.Message__c';
 
-import getFeedItemsForRunningUser from '@salesforce/apex/FollowedContentController.getFeedItemsForRunningUser';
+import getFeedItems from '@salesforce/apex/ChannelController.getFeedItems';
+import getFeedItemById from '@salesforce/apex/ChannelController.getFeedItemById';
 
 export default class Channel extends LightningElement {
     @api recordId;
@@ -27,6 +30,9 @@ export default class Channel extends LightningElement {
         createRecord(recordInput)
             .then(post => {
                 this.inputMessage = '';
+                this.template.querySelector('.slds-publisher__input').value = '';
+
+                this.getFeedItem(post.id);
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
@@ -36,24 +42,32 @@ export default class Channel extends LightningElement {
                 );
             })
             .catch(error => {
-                console.error('Error while creating current channel feed item: ' + error);
-                this.dispatchEvent(
-                    new ShowToastEvent({
-                        title: 'Error creating post',
-                        message: error.body.message,
-                        variant: 'error',
-                    }),
-                );
+                console.error('Error while creating current channel feed item: ' + JSON.stringify(error));
             });
     }
 
-    @wire(getFeedItemsForRunningUser)
+    @wire(getFeedItems, { channelId: '$recordId' })
     fetchFeedItems({error, data}) {
         if(data) {
-            this.feedItems = data;
+            this.feedItems = JSON.parse(JSON.stringify(data));
         }
         else if(error) {
             console.error('Error while fetching current channel feed items: ' + error);
         }
+    }
+
+    getFeedItem = (itemId) => {
+      const FIELDS = [CHANNEL_POST_CHANNEL_NAME, CHANNEL_POST_MESSAGE];
+      getFeedItemById({ itemId: itemId })
+            .then(item => {
+                let newlyCreatedItem = {
+                  channelName: item.channelName,
+                  message: item.message
+                };
+                this.feedItems.unshift(newlyCreatedItem);
+            })
+            .catch(error => {
+                console.error('Error while fetching newly created record: ' + error);
+            });
     }
 }

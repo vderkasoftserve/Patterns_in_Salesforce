@@ -10,6 +10,12 @@ public with sharing class ChannelController {
         return result;
     }
 
+    @AuraEnabled(Cacheable = true)
+    public static ItemWrapper getFeedItemById(Id itemId) {
+        Channel_Post__c post = new FeedItemsService().getChannelPostsById(itemId);
+        return new ItemWrapper(post.Channel__r.Name, post.Message__c);
+    }
+
     public class ItemWrapper {
         @AuraEnabled
         public String channelName { get; set; }
