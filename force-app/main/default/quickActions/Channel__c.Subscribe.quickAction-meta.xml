@@ -22,7 +22,7 @@
         </quickActionLayoutColumns>
         <quickActionLayoutColumns/>
     </quickActionLayout>
-    <successMessage>You\\\\\\\&#39;ve been subscribed!</successMessage>
+    <successMessage>You have been subscribed!</successMessage>
     <targetObject>Subscription__c</targetObject>
     <targetParentField>Channel__c</targetParentField>
     <type>Create</type>

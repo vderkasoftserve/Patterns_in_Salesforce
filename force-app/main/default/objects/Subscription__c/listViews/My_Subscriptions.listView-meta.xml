@@ -3,7 +3,7 @@
     <fullName>My_Subscriptions</fullName>
     <filterScope>Everything</filterScope>
     <label>My Subscriptions</label>
-    <columns>NAME</columns>
+    <columns>Channel__c</columns>
     <filters>
         <field>Is_Current_User_Subscriber__c</field>
         <operation>equals</operation>
