@@ -62,4 +62,8 @@
         <tab>Channel__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <tabSettings>
+        <tab>Followed_Items</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>
