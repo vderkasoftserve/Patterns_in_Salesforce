@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Subscriptions</fullName>
+    <filterScope>Everything</filterScope>
+    <label>My Subscriptions</label>
+    <columns>NAME</columns>
+    <filters>
+        <field>Is_Current_User_Subscriber__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+</ListView>
