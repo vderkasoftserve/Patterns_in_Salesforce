@@ -9,5 +9,7 @@ by running the following command in your CLI:
 In order to test the functionality please open the app called 'PubSub' in the App Launcher. There you will see two tabs:
 'Channel' and 'Followed Items'. You can create and subscribe to some channels you like. After creating a channel you are
 able to create posts in the channel feed. All the users that are subscribed to the channel will be able to view the newly
-created posts in their 'Followed Items' tab.
+created posts in their 'Followed Items' tab. Also, a custom notification will be sent to every subscriber. You can view
+the notifications by clicking the bell in the top right corner of the screen (you may need to wait up to a few minutes
+until the notification displays on the bell after the post is created).
 
