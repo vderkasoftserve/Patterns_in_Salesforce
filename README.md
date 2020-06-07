@@ -4,6 +4,14 @@ After you've pushed the medatada of the project to the scratch org please assign
 by running the following command in your CLI:
 `sfdx force:user:permset:assign -n Admin -u <your_user_name>`
 
+# State Pattern in Salesforce by Volodymyr Derkach (May 2020)
+
+In order to test the functionality please open the tab called 'Checking Account' in the App Launcher and create a new
+record. On the record's page layout you're able to make deposit to the account, withdraw some money and accrue interest
+by pressing the respective buttons.
+
+P.S. Don't forget to reload the page each time you press any button to be able to view the updated Balance.
+
 # Publish-subscribe Pattern in Salesforce by Volodymyr Derkach (May 2020)
 
 In order to test the functionality please open the app called 'PubSub' in the App Launcher. There you will see two tabs:
