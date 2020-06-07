@@ -101,6 +101,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Custom_Lookup_Test</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Followed_Items</tab>
         <visibility>Visible</visibility>
     </tabSettings>

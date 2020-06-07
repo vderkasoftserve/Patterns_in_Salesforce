@@ -1,0 +1,20 @@
+<aura:component description="AIQco_CustomLookupWrapper">
+    <aura:attribute name="fieldName" type="String" default="eshkere fieldname"/>
+    <aura:attribute name="label" type="String"/>
+    <aura:attribute name="value" type="String[]"/>
+    <aura:attribute name="options" type="Object[]"/>
+    <aura:attribute name="required" type="Boolean"/>
+    <aura:attribute name="allowMultiSelect" type="Boolean" default="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:registerEvent name="searchQueryChangeEvent" type="c:SearchQueryEvent" />
+
+    <c:customLookup fieldName="{!v.fieldName}"
+                          label="{!v.label}"
+                          options="{!v.options}"
+                          required="{!v.required}"
+                          allowMultiSelect="{!v.allowMultiSelect}"
+                          onsearchquerychange="{!c.handleSearchQueryChange}"
+                          onvaluechange="{!c.handleValuechange}"/>
+</aura:component>

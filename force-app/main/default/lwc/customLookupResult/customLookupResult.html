@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-dropdown slds-dropdown_length-with-icon-5 slds-dropdown_fluid" tabindex="0" onfocus={handleResultFocus} onblur={handleResultBlur}>
+        <ul class="slds-listbox slds-listbox_vertical slds-scrollable_y" role="presentation">
+            <template for:each={items} for:item='item'>
+                <c-custom-lookup-result-item item={item}
+                                                   key={item.option.value}
+                                                   onresultitemcheck={handleItemCheck}
+                                                   onresultitemuncheck={handleItemUncheck}
+                                                   ismultiselect={allowMultiSelect}
+                                                   issingleoptionchecked={isSingleOptionChecked}>
+                </c-custom-lookup-result-item>
+            </template>
+        </ul>
+    </div>
+</template>

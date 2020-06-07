@@ -1,4 +1,4 @@
-# This project implements a few GoF patterns in Salesforce. The patterns' descriptions are listed below.
+# This project implements a few GoF patterns in Salesforce. The pattern implementation descriptions are listed below.
 
 After you've pushed the medatada of the project to the scratch org please assign the 'Admin' permission set to your user
 by running the following command in your CLI:
@@ -12,6 +12,14 @@ able to create posts in the channel feed. All the users that are subscribed to t
 created posts in their 'Followed Items' tab. Also, a custom notification will be sent to every subscriber. You can view
 the notifications by clicking the bell in the top right corner of the screen (you may need to wait up to a few minutes
 until the notification displays on the bell after the post is created).
+
+# Adapter Pattern in Salesforce by Volodymyr Derkach (May 2020)
+
+In order to test the functionality please open the tab called 'Custom Lookup Test' in the App Launcher, click 'Open Modal'
+button and play with 'Custom Lookup' input. Other form element are dummy.
+
+The project implements a workaround of inability to create lwc components dynamically. In order to do that the lwc component
+'customLookup' was wrapped into 'CustomLookupWrapper' aura component which in its turn can be created dynamically.
 
 # Proxy Pattern in Salesforce by Volodymyr Derkach (June 2020)
 

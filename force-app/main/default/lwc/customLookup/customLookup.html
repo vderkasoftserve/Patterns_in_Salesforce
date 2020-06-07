@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="combobox-id-2">
+            <abbr if:true={required} class="slds-required" title="required">*</abbr>
+            {label}
+        </label>
+
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container" tabindex="0" onblur={handleLookupBlur}>
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="true" aria-haspopup="listbox">
+                    <c-custom-lookup-input oninputfocus={handleInputFocus}
+                                                 oninputblur={handleInputBlur}
+                                                 onsearchquerychange={handleSearchQueryChange}>
+                    </c-custom-lookup-input>
+
+                    <c-custom-lookup-result if:true={isResultShown}
+                                                  value={values}
+                                                  result={options}
+                                                  ismultiselect={allowMultiSelect}
+                                                  onitemcheck={handleItemCheck}
+                                                  onitemuncheck={handleItemUncheck}>
+                    </c-custom-lookup-result>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
