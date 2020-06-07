@@ -1,0 +1,75 @@
+<template>
+    <div if:true={isModalShown}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container modal-window">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" variant="inverse" size="medium"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium modal-body" id="modal-content-id-1">
+                    <div class="slds-form" role="list">
+                        <div class="slds-form__row">
+                            <div class="slds-form__item slds-align_absolute-center" role="listitem">
+                                <lightning-input class="project-name" type="text" label="Name" onchange={handleNameChange} onblur={handleNameInputBlur} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-form__item slds-align_absolute-center" role="listitem">
+                                <lightning-input type="checkbox" label="Is Emerging Work?" onchange={handleEmergingWorkFlagChange}></lightning-input>
+                            </div>
+                        </div>
+
+                        <div class="slds-form__row">
+                            <div class="slds-form__item slds-align_absolute-center" role="listitem">
+                                <div if:true={isRequiredBusinessValueShown}>
+                                    <lightning-input type="text" label="Business Value" required></lightning-input>
+                                </div>
+                                <div if:false={isRequiredBusinessValueShown}>
+                                    <lightning-input type="text" label="Business Value"></lightning-input>
+                                </div>
+                            </div>
+
+                            <div class="slds-form__item slds-align_absolute-center" role="listitem">
+                                <lightning-combobox label="Primary Objective" options={primaryObjectives} onchange={handlePrimaryObjectiveChange}>
+                                </lightning-combobox>
+                            </div>
+                        </div>
+
+                        <div class="slds-form__row">
+                            <div class="slds-form__item slds-align_absolute-center" role="listitem">
+                                <div if:true={isRequiredRiskReductionBenefitShown}>
+                                    <lightning-textarea label="Risk Reduction Benefit" onchange={handleRiskReductionBenefitChange} required>
+                                    </lightning-textarea>
+                                </div>
+                                <div if:false={isRequiredRiskReductionBenefitShown}>
+                                    <lightning-textarea label="Risk Reduction Benefit" onchange={handleRiskReductionBenefitChange}>
+                                    </lightning-textarea>
+                                </div>
+                            </div>
+
+                            <div class="slds-form__item slds-align_absolute-center" role="listitem">
+                                <div if:true={isRequiredCommentOnWhyEmergingWorkShown}>
+                                    <lightning-textarea label="Comment on Why Emerging Work" onchange={handleCommentOnWhyEmergingWorkChange} required>
+                                    </lightning-textarea>
+                                </div>
+                                <div if:false={isRequiredCommentOnWhyEmergingWorkShown}>
+                                    <lightning-textarea label="Comment on Why Emerging Work" onchange={handleCommentOnWhyEmergingWorkChange}>
+                                    </lightning-textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+                </footer>
+            </div>
+        </section>
+    </div>
+</template>
